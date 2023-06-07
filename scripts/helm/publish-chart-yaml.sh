@@ -239,7 +239,7 @@ echo "CHART_VERSION: $CHART_VERSION"
 echo "CHART_APP_VERSION: $CHART_APP_VERSION"
 
 # Allow only for a semver difference of at most patch
-allowed_diff=("" "patch" "prerelease")
+allowed_diff=("major" "patch" "prerelease")
 
 diff="$(semver diff "$CHART_VERSION" "$CHART_APP_VERSION")"
 if ! [[ " ${allowed_diff[*]} " =~ " $diff " ]]; then
