@@ -59,6 +59,7 @@ pipeline {
   agent none
   options {
     timeout(time: 2, unit: 'HOURS')
+    disableConcurrentBuilds()
   }
   parameters {
     booleanParam(defaultValue: false, name: 'build_images')
